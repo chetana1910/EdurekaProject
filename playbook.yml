@@ -4,7 +4,7 @@
   become_user: root
   vars:
    repo_path: https://github.com/chetana1910/EdurekaProject.git
-   dest_path: /tmp/gitrepo
+   dest_path: /tmp/workdir
   tasks:
   - name: Install multiple packages on host server
     yum: name={{item}} state=present
@@ -16,8 +16,8 @@
   - name: Clone the repo to HostServer
     git: repo={{repo_path}} dest={{dest_path}}
   - name: Copy the build in the destination
-    copy: src=/var/lib/jenkins/workspace/EdurekaProject/CICDpipeline/target/hello-world-0.0.1-SNAPSHOT.war dest={{dest_path}}
+    copy: src=/var/lib/jenkins/workspace/EdurekaProject/CICDpipeline/target/addressbook.war dest={{dest_path}}
   - name: Build Dockerfile
-    command: chdir={{dest_path}} docker build -t myansible .
+    command: chdir={{dest_path}} docker build -t myansible12 .
   - name: Run the image to deploy app in container
-    command: docker run -d -P myansible
+    command: docker run -d -P myansible12
