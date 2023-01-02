@@ -10,7 +10,7 @@ pipeline{
 	    
                steps{
 		 echo 'cloning'
-                 git 'https://github.com/chetana1910/spring-boot-war-example.git'
+                 git 'https://github.com/chetana1910/DevOpsClassCodes.git'
               }
           }
           stage('Compile'){
