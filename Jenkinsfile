@@ -8,6 +8,17 @@ pipeline{
     
     stages{
         
+        stage ('Compile the code') {
+            
+            steps{
+                
+                git 'https://github.com/Sonal0409/DevOpsCodeDemo.git'
+                sh 'mvn compile'
+                
+            }
+            
+        }
+        
       stage('Build the code'){
           steps{
               git 'https://github.com/Sonal0409/DevOpsCodeDemo.git'
