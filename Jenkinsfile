@@ -45,6 +45,12 @@ pipeline{
               }
           }
 	  
-	         
+	      stage ('Deploy') {
+	      steps{
+		      
+		     ansiblePlaybook credentialsId: 'Ansiblehost', disableHostKeyChecking: true, installation: 'myansible', inventory: 'server.inv', playbook: 'playbook.yml'
+	
+	      }
+	   }	      
       }
 }
