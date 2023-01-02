@@ -16,7 +16,7 @@
   - name: Clone the repo to HostServer
     git: repo={{repo_path}} dest={{dest_path}}
   - name: Copy the build in the destination
-    copy: src=/var/lib/jenkins/workspace/CICDpipeline/target/addressbook.war dest={{dest_path}}
+    copy: src=/var/lib/jenkins/workspace/EdurekaProject/CICDpipeline/target/addressbook.war dest={{dest_path}}
   - name: Build Dockerfile
     command: chdir={{dest_path}} docker build -t myansible .
   - name: Run the image to deploy app in container
