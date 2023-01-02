@@ -10,7 +10,7 @@ pipeline{
         
       stage('Build the code'){
           steps{
-              git 'https://github.com/chetana1910/DevOpsCodeDemo.git'
+              git 'https://github.com/Sonal0409/DevOpsCodeDemo.git'
               sh 'mvn clean package'
           }
       }
