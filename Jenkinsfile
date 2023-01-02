@@ -17,7 +17,7 @@ pipeline{
       
       stage('Deploy Code'){
           steps{
-               git branch: 'main', url: 'https://github.com/chetana1910/EdurekaProject.git'
+               git branch: 'master', url: 'https://github.com/chetana1910/EdurekaProject.git'
               ansiblePlaybook credentialsId: 'Ansiblehost', disableHostKeyChecking: true, installation: 'myansible', inventory: 'server.inv', playbook: 'playbook.yml'
           }
       }
